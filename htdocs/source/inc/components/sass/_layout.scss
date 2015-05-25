@@ -1,0 +1,140 @@
+.main-nav{
+		
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	height: 55px;
+	background-color:$base__color--primary;
+
+	@include susy-breakpoint($mobile--small) {}
+	@include susy-breakpoint($mobile--large) {}
+	@include susy-breakpoint($tablet--small) {}
+	@include susy-breakpoint($tablet--large) {}
+	@include susy-breakpoint($screen--small) {}
+	@include susy-breakpoint($screen--large) {}
+
+	&__logo{
+		
+		max-width : $mobile--small - 150px;
+
+		// @include susy-breakpoint($mobile--large) {
+			
+		// 	width:100%;		
+
+		// }		
+	}
+
+	&__icon--navicon{
+		
+		display:inline-block;
+		
+		margin:0.3em;
+		padding:0.3em;
+
+		border:0.15em solid white;
+
+		font-size:1em;
+		color:white;
+
+		@include border-radius(3px, 3px);
+	}
+}
+
+.login_form{
+
+	position:absolute;
+	top:5px;
+	right:5px;
+
+	input{
+		height : 30px;
+		border : 0;
+	}
+
+}
+
+.main-nav__logo{}
+
+.main-header{
+	font-family: 'Crete Round', serif;
+	font-weight:normal;
+	color:white;
+}
+
+section p,
+section .home__header{
+	margin:30px;
+	font-family: 'Abel', sans-serif;
+}
+
+.scibble{
+	font-family: 'Cedarville Cursive', cursive;
+}
+
+.home__header{
+	font-family: 'Leckerli One', cursive;
+}
+
+section p{
+	
+	font-size: 16px;
+	color:$base__color--secondary;
+}
+
+//	font-family: 'Abel', sans-serif;
+
+
+h1{
+	font-family: 'Leckerli One', cursive;
+}
+
+/**** Home ****/
+
+.banner{
+	
+	height:300px;
+	color:$base__color--primary;	
+
+	&__subscribe{
+		background:lighten($base__color--secondary,20);
+	}
+
+	&__example{
+		background:lighten($base__color--secondary,40);
+	}
+
+}
+
+.home__icon{
+	
+	display: block;
+	padding: 3px;
+	width: 75px;
+
+	margin: 0 auto !important;
+
+	background-color:$base__color--primary;
+	background-image: url('../../../images/structure/bg__icon.png');
+
+	text-align:center;
+
+	font-family:'fontello'; 
+	font-size:3em;
+	color:white;
+
+	@include border-radius(10px);
+
+}
+
+/*** Bootstrap ***/
+
+.navbar{
+	margin-bottom:0 !important;
+}
+
+.navbar-inverse{
+	background:$base__color--primary;
+	border:0;
+}
+
