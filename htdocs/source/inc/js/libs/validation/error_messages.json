@@ -1,23 +1,23 @@
 {
     "StrErrorMsgTxtInitials"		: { 
                                             "minchar" : "Het lijkt erop dat uw voorletters niet zijn aangegeven",
-                                            "format"  : "Het lijkt erop dat uw voorletters niet zijn aangegeven"
+                                            "format"  : "Het lijkt erop dat uw voorletters niet op de juiste wijze aangegeven"
                                       },
     "StrErrorMsgTxtLastName"		: { 
                                             "minchar" : "Het lijkt erop dat uw achternaam niet is aangegeven",
-                                            "format"  : "Het lijkt erop dat uw achternaam niet is aangegeven"
+                                            "format"  : "Het lijkt erop dat uw achternaam niet op de juiste wijze aangegeven"
                                       },
     "StrErrorMsgTxtEmail"			: { 
-                                            "minchar" : "Het lijkt erop dat dit geen gelding e-mailadres is",
+                                            "minchar" : "Het lijkt erop dat uw e-mailadres niet is aangegeven",
                                             "format"  : "Het lijkt erop dat dit geen gelding e-mailadres is"
                                       },
     "StrErrorMsgTxtZipcode"		    : { 
-                                            "minchar" : "Het lijkt erop dat de postcode niet juist is ingevoerd. Voorbeeld: 1234AB",
+                                            "minchar" : "Het lijkt erop dat de postcode niet is aangegeven.",
                                             "format"  : "Het lijkt erop dat de postcode niet juist is ingevoerd. Voorbeeld: 1234AB"
                                       },
     "StrErrorMsgRadioGender"		: { 
                                             "minchar" : "Het lijkt erop dat uw aanhef niet is aangegeven",
-                                            "format"  : "Het lijkt erop dat uw aanhef niet is aangegeven"
+                                            "format"  : "Het lijkt erop dat uw aanhef niet op de juiste wijze aangegeven"
                                       },
     "StrErrorMsgRadioGift"		    : { 
                                             "minchar" : "Het lijkt erop dat u niet heeft aangegeven of u een welkomstgeschenk wilt ontvangen",
@@ -26,15 +26,15 @@
 
     "StrErrorMsgStreetNumber"		: { 
                                             "minchar" : "Het lijkt erop dat uw huisnummer niet is aangegeven",
-                                            "format"  : "Het lijkt erop dat uw huisnummer niet is aangegeven"
+                                            "format"  : "Het lijkt erop dat uw huisnummer niet op de juiste wijze is aangegeven"
                                       },
     "StrErrorMsgStreet"		        : { 
                                             "minchar" : "Het lijkt erop dat uw straat niet is aangegeven",
-                                            "format"  : "Het lijkt erop dat uw straat niet is aangegeven"
+                                            "format"  : "Het lijkt erop dat uw straat niet op de juiste wijze is aangegeven"
                                       },
     "StrErrorMsgCity"			    : { 
                                             "minchar" : "Het lijkt erop dat uw stad niet is aangegeven",
-                                            "format"  : "Het lijkt erop dat uw stad niet is aangegeven"
+                                            "format"  : "Het lijkt erop dat uw stad niet op de juiste wijze is aangegeven"
                                       },
     
     "StrErrorMsgTxtPhoneCount"	    : { 
