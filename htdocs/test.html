@@ -5,8 +5,26 @@
 	<title>Test pagina</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <body>
-	<input type="text" valtype="zipcode" verplicht="verplicht" minchar="6" transform="uppercase" />
-	<input type="email" />
+
+	<input 
+		type="text" 
+		verplicht="verplicht" 
+		minchar="1" 
+		transform="firstupper"
+		errorAlias="StrErrorMsgTxtZipcode" 
+	/>
+	<input 
+		type="text" 
+		verplicht="verplicht" 
+		valtype="zipcode" 
+		minchar="6" 
+		transform="uppercase" 
+		nospaces="nospaces"
+		errorAlias="StrErrorMsgTxtZipcode"
+	/>
+	<input type="email" valtype="email" />
+	
 	<script src="source/inc/js/libs/validation/functions.inc.js"></script>
+
 </body>
 </html>

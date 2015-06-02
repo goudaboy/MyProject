@@ -1,0 +1,61 @@
+{
+    "StrErrorMsgTxtInitials"		: { 
+                                            "minchar" : "Het lijkt erop dat uw voorletters niet zijn aangegeven",
+                                            "format"  : "Het lijkt erop dat uw voorletters niet zijn aangegeven"
+                                      },
+    "StrErrorMsgTxtLastName"		: { 
+                                            "minchar" : "Het lijkt erop dat uw achternaam niet is aangegeven",
+                                            "format"  : "Het lijkt erop dat uw achternaam niet is aangegeven"
+                                      },
+    "StrErrorMsgTxtEmail"			: { 
+                                            "minchar" : "Het lijkt erop dat dit geen gelding e-mailadres is",
+                                            "format"  : "Het lijkt erop dat dit geen gelding e-mailadres is"
+                                      },
+    "StrErrorMsgTxtZipcode"		    : { 
+                                            "minchar" : "Het lijkt erop dat de postcode niet juist is ingevoerd. Voorbeeld: 1234AB",
+                                            "format"  : "Het lijkt erop dat de postcode niet juist is ingevoerd. Voorbeeld: 1234AB"
+                                      },
+    "StrErrorMsgRadioGender"		: { 
+                                            "minchar" : "Het lijkt erop dat uw aanhef niet is aangegeven",
+                                            "format"  : "Het lijkt erop dat uw aanhef niet is aangegeven"
+                                      },
+    "StrErrorMsgRadioGift"		    : { 
+                                            "minchar" : "Het lijkt erop dat u niet heeft aangegeven of u een welkomstgeschenk wilt ontvangen",
+                                            "format"  : "Het lijkt erop dat u niet heeft aangegeven of u een welkomstgeschenk wilt ontvangen"
+                                      },
+
+    "StrErrorMsgStreetNumber"		: { 
+                                            "minchar" : "Het lijkt erop dat uw huisnummer niet is aangegeven",
+                                            "format"  : "Het lijkt erop dat uw huisnummer niet is aangegeven"
+                                      },
+    "StrErrorMsgStreet"		        : { 
+                                            "minchar" : "Het lijkt erop dat uw straat niet is aangegeven",
+                                            "format"  : "Het lijkt erop dat uw straat niet is aangegeven"
+                                      },
+    "StrErrorMsgCity"			    : { 
+                                            "minchar" : "Het lijkt erop dat uw stad niet is aangegeven",
+                                            "format"  : "Het lijkt erop dat uw stad niet is aangegeven"
+                                      },
+    
+    "StrErrorMsgTxtPhoneCount"	    : { 
+                                            "minchar" : "Het aantal cijfers van het netnr en telefoonnr samen moet 10 cijfers zijn",
+                                            "format"  : "Het aantal cijfers van het netnr en telefoonnr samen moet 10 cijfers zijn"
+                                      },
+    "StrErrorMsgTxtPhoneNumber"	    : { 
+                                            "minchar" : "Het lijkt erop dat uw telefoonnr niet juist is aangegeven.",
+                                            "format"  : "Het lijkt erop dat uw telefoonnr niet juist is aangegeven."
+                                      },
+    "StrErrorMsgTxtNetNumber"		: { 
+                                            "minchar" : "Het lijkt erop dat uw netnummer is onjuist. Voorbeeld: 072",
+                                            "format"  : "Het lijkt erop dat uw netnummer is onjuist. Voorbeeld: 072"
+                                      },
+
+    "StrErrorMsgTxtPasswordEmpty"	: { 
+                                            "minchar" : "Het lijkt erop dat uw wachtwoord niet juist is aangegeven, misschien te weinig karakters (min. 6) of typefout?",
+                                            "format"  : "Het lijkt erop dat uw wachtwoord niet juist is aangegeven, misschien te weinig karakters (min. 6) of typefout?"
+                                      },
+    "StrErrorMsgTxtPasswordMatch"	: { 
+                                            "minchar" : "Het lijkt erop dat de aangegeven wachtwoorden niet overeen komen",
+                                            "format"  : "Het lijkt erop dat de aangegeven wachtwoorden niet overeen komen"
+                                      }
+}
