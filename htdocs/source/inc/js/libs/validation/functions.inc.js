@@ -1,4 +1,11 @@
-var ArrErrorMessages = [];
+var ArrErrorMessages 	= [];
+var IntErrorCounter 	= 0;
+
+/*** Netnumbers for Phone Number check ***/ 
+
+var arrNetTwo 		= ['06'];
+var arrNetThree 	= ['010','013','015','020','023','024','026','030','033','035','036','038','040','043','045','046','050','053','055','058','070','071','072','073','074','075','076','077','078','079'];
+var arrNetFour 		= ['0111','0113','0114','0115','0117','0118','0161','0162','0164','0165','0166','0167','0168','0172','0174','0180','0181','0182','0183','0184','0186','0187','0222','0223','0224','0226','0227','0228','0229','0251','0252','0255','0294','0297','0299','0313','0314','0315','0316','0317','0318','0320','0321','0341','0342','0343','0344','0345','0346','0347','0348','0411','0412','0413','0416','0418','0475','0478','0481','0485','0486','0487','0488','0492','0493','0495','0497','0499','0511','0512','0513','0514','0515','0516','0517','0518','0519','0521','0522','0523','0524','0525','0527','0528','0529','0541','0543','0544','0545','0546','0547','0548','0561','0562','0566','0570','0571','0572','0573','0575','0577','0578','0592','0592','0593','0594','0595','0596','0597','0598','0599'];
 
 var Transformer = function(){
 
@@ -84,7 +91,7 @@ var Validator = function (){
 		
 		},
 		phone : function(){
-
+			getNetNumber.call(this);
 		}
 
 	};
@@ -94,15 +101,15 @@ var Validator = function (){
 		MinChar : function(){
 
 			var result = '';
-			var minCharTrigger = this.hasAttribute("minChar");
+			var minCharTrigger = this.hasAttribute("minchar");
 
 			if(minCharTrigger === true){
 
 				var strLength  = this.value.length;
-				var minLength = this.getAttribute('minChar');
+				var minLength = this.getAttribute('minchar');
 
-				result = strLength > minLength || this.value === '' ? false /* Minimal Amount has not been reached */  : true /* Minimal lenght has been reached */; 
-				
+				result = strLength < minLength || this.value === '' ? false /* Minimal Amount has not been reached */  : true /* Minimal lenght has been reached */; 
+
 				return result;
 
 			}else{ return true; /* No minimal amount of characters */ }
@@ -111,7 +118,7 @@ var Validator = function (){
 		valType : function(){
 
 			var result = '';
-			var minValTypeTrigger = inputItem.hasAttribute("valType");
+			var minValTypeTrigger = inputItem.hasAttribute("valtype");
 
 			if(minValTypeTrigger === true){
 
@@ -121,6 +128,9 @@ var Validator = function (){
 					break;
 					case 'email' :
 						result = ValidatorThis.options.email.call(this);
+					break;
+					case 'phone' :
+						result = ValidatorThis.options.phone.call(this);
 					break;
 				}
 
@@ -136,23 +146,28 @@ var Validator = function (){
 	if (inputItem.getAttribute("verplicht") !== undefined) {
 		//
 		var result = [];
-		
+
 		result[1] = this.required.MinChar.call(inputItem);
+		console.log(result[1]);
 		result[2] = this.required.valType.call(inputItem);
 
 		if(result[1] === false){
+		
 			inputObject.errormessage.chars = error_message.call(inputItem);
+			$(inputObject.inputItem).css('border', '2px solid red');
+		
 		}else{
+			
 			inputObject.errormessage.chars = '';
-			$(inputObject.inputItem).css('border', '2px solid blue');
-		}
 
-		if(result[2] === false){
-			inputObject.errormessage.format = error_message.call(inputItem);
-		}else{
-			inputObject.errormessage.format = '';
-			$(inputObject.inputItem).css('border', '2px solid lightgreen');
-			$(inputObject.inputItem).css('content', 'goed!');
+			if(result[2] === false){
+				inputObject.errormessage.format = error_message.call(inputItem);
+			}else{
+				inputObject.errormessage.format = '';
+				$(inputObject.inputItem).css('border', '2px solid lightgreen');
+				$(inputObject.inputItem).css('content', 'goed!');
+			}
+
 		}
 
 	}else{ /* No Actions */ } 
@@ -195,7 +210,7 @@ function error_message(){
 		// Catch value of attribute
 		IntlabelNr = this.getAttribute('errorAlias');
 
-		console.log(ArrErrorMessages[IntlabelNr].minchar);
+		// console.log(ArrErrorMessages[IntlabelNr].minchar);
 		// Get error values in an array by key
 		// ArrErrorValue = getValues(errorMessagesJSON, IntlabelNr);
 		// Return the first value
@@ -242,61 +257,50 @@ $(document).ready(function(){
 	
 	// console.dir(errormessageObj['StrErrorMsgTxtEmail']);
 
-	$('input').on('blur keydown', function(){
+	$('input').on('onblur keyup', function(){
 
 		errorHandler.Transformer(this);
 		errorHandler.Validator(this);
-		
-		switch(this.type){
-
-			case 'text' :
-				errorHandler.Textfield.call(this);
-			break;
-
-			case 'email' :
-				errorHandler.Email.call(this);
-			break;
-
-		}
 
 	});
 
 });
 
-
 /**** Shame *****/
 
-function GetNetNumber(myTarget){
+function getNetNumber(){
 
-	var ValidateNetNummer = -1;
+	var validationCounter = -1;
 	var i=0;
 
-	while(ValidateNetNummer < 0 && i <= $(myTarget).val().length)
+	while(validationCounter < 0 && i <= $(this).val().length)
 	{
-		TargetSubstr = $(myTarget).val().substr(0,i++);
+		
+		TargetSubstr = $(this).val().substr(0,i++);
+		
 		switch(TargetSubstr.length)
 	  	{
 	  		case 1 :
 	  			$('[name="fields[netnumber]"]').val(TargetSubstr);
-	  			$('#labelNetnr').html(TargetSubstr);
+	  			// $('#labelNetnr').html(TargetSubstr);
 			break;
 
 	  		case 2 :
-	  			ValidateNetNummer = $.inArray(TargetSubstr, arrNetTwo);
+	  			validationCounter = $.inArray(TargetSubstr, arrNetTwo);
 	  			$('[name="fields[netnumber]"]').val(TargetSubstr);
-	  			$('#labelNetnr').html(TargetSubstr);
+	  			// $('#labelNetnr').html(TargetSubstr);
 	  		break;
 
 			case 3 :
-	  			ValidateNetNummer = $.inArray(TargetSubstr, arrNetThree);
+	  			validationCounter = $.inArray(TargetSubstr, arrNetThree);
 	  			$('[name="fields[netnumber]"]').val(TargetSubstr);
-	  			$('#labelNetnr').html(TargetSubstr);
+	  			// $('#labelNetnr').html(TargetSubstr);
 	  		break;
 
 	  		case 4 :
-	  			ValidateNetNummer = $.inArray(TargetSubstr, arrNetFour);
+	  			validationCounter = $.inArray(TargetSubstr, arrNetFour);
 	  			$('[name="fields[netnumber]"]').val(TargetSubstr);
-	  			$('#labelNetnr').html(TargetSubstr);
+	  			// $('#labelNetnr').html(TargetSubstr);
 	  		break;
 
 	  		case 5 : 
@@ -306,21 +310,21 @@ function GetNetNumber(myTarget){
 	}
 
 	// Validatnummer -1 means: No match
-	if(ValidateNetNummer != -1){
+	if(validationCounter != -1){
 
 		var NetNumberLength = $('[name="fields[netnumber]"]').val().length;
-		var PhoneNumberLength = $(myTarget).val().length;
+		var PhoneNumberLength = $(this).val().length;
 
-		AbnonneeNummer = $(myTarget).val().substr(NetNumberLength, PhoneNumberLength);
-		$('[name="fields[phonenumber]"]').val(AbnonneeNummer);
-		
-		var ShowSubscrNr = AbnonneeNummer;
+		var subscriptionNumber = $(this).val().substr(NetNumberLength, PhoneNumberLength);
+		$('[name="fields[phonenumber]"]').val(subscriptionNumber);
+
+		var ShowSubscrNr = subscriptionNumber;
 
 		if(isOdd(ShowSubscrNr.length) === true)
 		{	
-			NewSubscrNr = ShowSubscrNr.substring(0, 3) + " " + ShowSubscrNr.substring(3, 5) + " " + ShowSubscrNr.substring(5, ShowSubscrNr.length);
+			NewSubscrNr = ShowSubscrNr.substring(0, 3)+" "+ShowSubscrNr.substring(3, 5)+" "+ShowSubscrNr.substring(5, ShowSubscrNr.length);
 		}else{
-			NewSubscrNr = ShowSubscrNr.substring(0, 2) + " " + ShowSubscrNr.substring(2, 4) + " " + ShowSubscrNr.substring(4, 6) + " " + ShowSubscrNr.substring(6, ShowSubscrNr.length);
+			NewSubscrNr = ShowSubscrNr.substring(0, 2)+" "+ShowSubscrNr.substring(2, 4)+" "+ShowSubscrNr.substring(4, 6)+" "+ShowSubscrNr.substring(6, ShowSubscrNr.length);
 		}
 		
 		$('#labelSubscrnr').html(NewSubscrNr);
