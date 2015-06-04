@@ -152,6 +152,7 @@ var Validator = function (){
 		}else{
 			inputObject.errormessage.format = '';
 			$(inputObject.inputItem).css('border', '2px solid lightgreen');
+			$(inputObject.inputItem).css('content', 'goed!');
 		}
 
 	}else{ /* No Actions */ } 
@@ -229,8 +230,6 @@ $(document).ready(function(){
 
 	"use strict";
 	console.info('Code by Jaap Tinholt');
-
-	
 
 	$.getJSON( "source/inc/js/libs/validation/error_messages.json")
 	.done(function( data ) {

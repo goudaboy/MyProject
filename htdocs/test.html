@@ -7,6 +7,7 @@
 <body>
 
 	<input 
+		name="field[name]"
 		type="text" 
 		verplicht="verplicht" 
 		minchar="1" 
@@ -14,6 +15,7 @@
 		errorAlias="StrErrorMsgTxtZipcode" 
 	/>
 	<input 
+		name="field[zipcode]"
 		type="text" 
 		verplicht="verplicht" 
 		valtype="zipcode" 
@@ -22,7 +24,21 @@
 		nospaces="nospaces"
 		errorAlias="StrErrorMsgTxtZipcode"
 	/>
-	<input type="email" valtype="email" />
+	<input 
+		name="field[zipcode]"
+		type="text" 
+		verplicht="verplicht" 
+		valtype="zipcode" 
+		minchar="6" 
+		transform="uppercase" 
+		nospaces="nospaces"
+		errorAlias="StrErrorMsgTxtZipcode"
+	/>
+	<input 
+		name="field[zipcode]"
+		type="email" 
+		valtype="email" 
+	/>
 	
 	<script src="source/inc/js/libs/validation/functions.inc.js"></script>
 
